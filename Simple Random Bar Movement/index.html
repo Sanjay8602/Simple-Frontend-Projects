@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bar Animation</title>
+  <style>
+   body{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     min-height: 100vh;
+     background-color: white;
+     margin: 0;
+     font-family: Arial, sans-serif;
+   }
+   .chart-container {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-around;
+      width: 60%;
+      height: 300px;
+      background-color: #1a1a1a;
+      border: 12px solid #333;
+      margin-bottom: 30px;
+    }
+
+    .bar {
+      width: 30%;
+      height: 300px; 
+      transition: height 0.3s ease;
+    }
+
+    .controls {
+      display: flex;
+      gap: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .start-btn {
+      background-color: green;
+      color: white;
+    }
+
+    .reset-btn {
+      background-color: purple;
+      color: white;
+    }
+
+    .stop-btn {
+      background-color: red;
+      color: white;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <div class="chart-container">
+    <div class="bar" style="background-color: purple;"></div>
+    <div class="bar" style="background-color: pink;"></div>
+    <div class="bar" style="background-color: orange;"></div>
+    <div class="bar" style="background-color: yellow;"></div>
+    <div class="bar" style="background-color: blue;"></div>
+
+  </div>
+  <div class="controls">
+    <button id="start-btn" class="start-btn">Start</button>
+    <button id="reset-btn" class="reset-btn">Reset</button>
+    <button id="stop-btn" class="stop-btn">Stop</button>
+  </div>
+  <script>
+    const bars = document.querySelectorAll('.bar');
+    const startButton = document.getElementById('start-btn');
+    const resetButton = document.getElementById('reset-btn');
+    const stopButton = document.getElementById('stop-btn'); //Here DOM manipulation has been done by using getElementById
+
+    let animationInterval;
+
+    
+    startButton.addEventListener('click', () => {
+      clearInterval(animationInterval); 
+      animationInterval = setInterval(() => {
+        bars.forEach(bar => {
+          const newHeight = Math.random() * 200 + 100; 
+          bar.style.height = `${newHeight}px`;
+        });
+      }, 500);
+    });
+
+    // for stoping the bars to move
+    stopButton.addEventListener('click', () => {
+      clearInterval(animationInterval); 
+    });
+
+    //for reseting the bars to their initial height i.e to max height
+    resetButton.addEventListener('click', () => {
+      clearInterval(animationInterval); 
+      bars.forEach(bar => {
+        bar.style.height = '300px'; 
+      });
+    });
+  </script>
+</body>
+</html>
+
+<!-- I have provided my explanation here because downside box was not working properly. 
+I have used HTML,CSS abd JS for this animation. I have made it similiar not same but simpler than this. For checkoing the code I would nbe blunt honest that I did code on VS code for checking animation on local server.
+In JS I just have done DOM manipulation by using Id
+for creting bar char chart used div.
+-->
