@@ -1,0 +1,78 @@
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  height: 100vh;
+  background: #121212;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.welcome-container {
+  position: relative;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #6e7e8f, #4a90e2);
+  color: white;
+  overflow: hidden;
+  animation: backgroundAnimation 10s infinite alternate;
+}
+
+.welcome-container h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  animation: textAnimation 3s ease-out infinite;
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.6), 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+
+@keyframes backgroundAnimation {
+  0% {
+    background: linear-gradient(135deg, #6e7e8f, #4a90e2);
+  }
+  50% {
+    background: linear-gradient(135deg, #4a90e2, #6e7e8f);
+  }
+  100% {
+    background: linear-gradient(135deg, #6e7e8f, #4a90e2);
+  }
+}
+
+
+@keyframes textAnimation {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+}
+
+body {
+  animation: zoomIn 10s ease-out infinite;
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
