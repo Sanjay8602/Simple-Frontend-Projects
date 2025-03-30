@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Smooth scrolling for navigation
+  
     document.querySelectorAll('nav a').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   
-    // Form submission
+
     document.getElementById('contactForm').addEventListener('submit', function(event) {
       event.preventDefault();
   
