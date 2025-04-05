@@ -1,40 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
   <title>Restaurant Menu</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header>Delight Bites Restaurant</header>
+  <header>
+    <h1>Delicious Bites</h1>
+    <nav class="category-filters">
+      <button class="filter-btn active" data-category="All">All</button>
+      <button class="filter-btn" data-category="North Indian">North Indian</button>
+      <button class="filter-btn" data-category="South Indian">South Indian</button>
+      <button class="filter-btn" data-category="Italian">Italian</button>
+    </nav>
+  </header>
 
-  <nav>
-    <a href="#menu">Menu</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <main>
+    <section id="menuContainer" class="menu-grid"></section>
+  </main>
 
-  <section id="menu">
-    <div class="menu-buttons">
-      <button class="filter-btn" onclick="filterMenu('all')">All</button>
-      <button class="filter-btn" onclick="filterMenu('north')">North Indian</button>
-      <button class="filter-btn" onclick="filterMenu('south')">South Indian</button>
-      <button class="filter-btn" onclick="filterMenu('italian')">Italian</button>
-    </div>
-
-    <div class="menu-container" id="menuContainer"></div>
-  </section>
-
-  <section id="contact">
-    <h2 style="text-align:center;">Contact Us</h2>
-    <form class="contact-form" onsubmit="submitForm(event)">
+  <footer>
+    <form id="contactForm">
+      <h2>Contact Us</h2>
       <input type="text" placeholder="Your Name" required />
       <input type="email" placeholder="Your Email" required />
-      <textarea placeholder="Message" rows="4" required></textarea>
-      <button type="submit">Send Message</button>
-      <div id="formMessage"></div>
+      <textarea placeholder="Message"></textarea>
+      <button type="submit">Send</button>
+      <p id="formMessage"></p>
     </form>
-  </section>
+  </footer>
 
   <script src="script.js"></script>
 </body>
