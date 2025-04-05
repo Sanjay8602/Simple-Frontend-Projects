@@ -1,34 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Restaurant Menu</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header>
     <h1>Delicious Bites</h1>
-    <nav class="category-filters">
-      <button class="filter-btn active" data-category="All">All</button>
-      <button class="filter-btn" data-category="North Indian">North Indian</button>
-      <button class="filter-btn" data-category="South Indian">South Indian</button>
-      <button class="filter-btn" data-category="Italian">Italian</button>
-    </nav>
+    <p>Select your favorite cuisine</p>
   </header>
 
-  <main>
-    <section id="menuContainer" class="menu-grid"></section>
-  </main>
+  <section class="category-filters">
+    <button class="filter-btn active" data-category="All">All</button>
+    <button class="filter-btn" data-category="North Indian">North Indian</button>
+    <button class="filter-btn" data-category="South Indian">South Indian</button>
+    <button class="filter-btn" data-category="Italian">Italian</button>
+  </section>
+
+  <section class="menu-grid" id="menuContainer">
+    <!-- Menu items will be dynamically inserted here -->
+  </section>
 
   <footer>
-    <form id="contactForm">
-      <h2>Contact Us</h2>
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea placeholder="Message"></textarea>
-      <button type="submit">Send</button>
-      <p id="formMessage"></p>
-    </form>
+    <p>&copy; 2025 Delicious Bites. All rights reserved.</p>
   </footer>
 
   <script src="script.js"></script>
