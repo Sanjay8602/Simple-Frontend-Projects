@@ -3,29 +3,110 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Restaurant Menu</title>
+  <title>Restaurant Menu | Delicious Bites</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header>
-    <h1>Delicious Bites</h1>
-    <p>Select your favorite cuisine</p>
+    <div class="header-content">
+      <h1>Delicious Bites</h1>
+      <p class="tagline">Authentic flavors from around the world</p>
+      <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search dishes..." />
+        <button id="searchBtn"><i class="fas fa-search"></i></button>
+      </div>
+    </div>
   </header>
 
-  <section class="category-filters">
-    <button class="filter-btn active" data-category="All">All</button>
-    <button class="filter-btn" data-category="North Indian">North Indian</button>
-    <button class="filter-btn" data-category="South Indian">South Indian</button>
-    <button class="filter-btn" data-category="Italian">Italian</button>
-  </section>
+  <main>
+    <section class="category-filters">
+      <div class="filter-container">
+        <button class="filter-btn active" data-category="All">
+          <i class="fas fa-utensils"></i> All
+        </button>
+        <button class="filter-btn" data-category="North Indian">
+          <i class="fas fa-pepper-hot"></i> North Indian
+        </button>
+        <button class="filter-btn" data-category="South Indian">
+          <i class="fas fa-leaf"></i> South Indian
+        </button>
+        <button class="filter-btn" data-category="Italian">
+          <i class="fas fa-pizza-slice"></i> Italian
+        </button>
+      </div>
+    </section>
 
-  <section class="menu-grid" id="menuContainer">
-    <!-- Menu items will be dynamically inserted here -->
-  </section>
+    <section class="menu-grid" id="menuContainer">
+      <!-- Menu items will be dynamically inserted here -->
+    </section>
+
+    <div class="cart-container">
+      <button class="cart-btn" id="cartToggle">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count">0</span>
+      </button>
+      <div class="cart-dropdown" id="cartDropdown">
+        <h3>Your Order</h3>
+        <div class="cart-items" id="cartItems">
+          <!-- Cart items will appear here -->
+          <p class="empty-cart">Your cart is empty</p>
+        </div>
+        <div class="cart-total">
+          <span>Total:</span>
+          <span id="cartTotal">₹0</span>
+        </div>
+        <button class="checkout-btn" id="checkoutBtn">Checkout</button>
+      </div>
+    </div>
+  </main>
 
   <footer>
-    <p>&copy; 2025 Delicious Bites. All rights reserved.</p>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p><i class="fas fa-map-marker-alt"></i> 123 Food Street, Mumbai</p>
+        <p><i class="fas fa-phone"></i> +91 9876543210</p>
+        <p><i class="fas fa-envelope"></i> info@deliciousbites.com</p>
+      </div>
+      <div class="footer-section">
+        <h3>Opening Hours</h3>
+        <p>Monday - Friday: 11am - 10pm</p>
+        <p>Saturday - Sunday: 10am - 11pm</p>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2025 Delicious Bites. All rights reserved.</p>
+    </div>
   </footer>
+
+  <div class="modal" id="itemModal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <img id="modalImage" src="" alt="" />
+      <div class="modal-info">
+        <h2 id="modalTitle"></h2>
+        <p class="modal-category" id="modalCategory"></p>
+        <p class="modal-price" id="modalPrice"></p>
+        <div class="quantity-control">
+          <button class="quantity-btn" id="decreaseQty">-</button>
+          <span id="itemQty">1</span>
+          <button class="quantity-btn" id="increaseQty">+</button>
+        </div>
+        <button class="add-to-cart-btn" id="addToCartBtn">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="notification" id="notification"></div>
 
   <script src="script.js"></script>
 </body>
