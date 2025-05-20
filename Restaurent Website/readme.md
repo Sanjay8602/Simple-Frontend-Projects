@@ -1,4 +1,4 @@
-Delicious Bites Restaurant Menu
+###Delicious Bites Restaurant Menu
 Description
 Delicious Bites is a responsive web application showcasing a restaurant menu with North Indian, South Indian, and Italian dishes. Built with HTML, CSS, and JavaScript, it allows users to browse, filter, search, and add items to a cart, with features like currency toggling, cart persistence, and accessibility support.
 How It Works
