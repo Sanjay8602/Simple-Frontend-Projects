@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore the menu of Delicious Bites, offering authentic North Indian, South Indian, and Italian dishes in Mumbai." />
+  <meta name="keywords" content="restaurant, menu, food, Delicious Bites, Mumbai, North Indian, South Indian, Italian" />
   <title>Restaurant Menu | Delicious Bites</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -12,9 +15,17 @@
     <div class="header-content">
       <h1>Delicious Bites</h1>
       <p class="tagline">Authentic flavors from around the world</p>
+      <div class="currency-toggle">
+        <label for="currencySelect">Currency:</label>
+        <select id="currencySelect">
+          <option value="INR">INR (₹)</option>
+          <option value="USD">USD ($)</option>
+        </select>
+      </div>
       <div class="search-container">
-        <input type="text" id="searchInput" placeholder="Search dishes..." />
-        <button id="searchBtn"><i class="fas fa-search"></i></button>
+        <input type="text" id="searchInput" placeholder="Search dishes..." aria-label="Search dishes" />
+        <button id="clearSearchBtn" aria-label="Clear search"><i class="fas fa-times"></i></button>
+        <button id="searchBtn" aria-label="Search dishes"><i class="fas fa-search"></i></button>
       </div>
     </div>
   </header>
@@ -37,28 +48,36 @@
       </div>
     </section>
 
+    <div class="loading-spinner" id="loadingSpinner">
+      <i class="fas fa-spinner fa-spin"></i>
+    </div>
+
     <section class="menu-grid" id="menuContainer">
       <!-- Menu items will be dynamically inserted here -->
     </section>
 
     <div class="cart-container">
-      <button class="cart-btn" id="cartToggle">
+      <button class="cart-btn" id="cartToggle" aria-label="Toggle cart">
         <i class="fas fa-shopping-cart"></i>
         <span class="cart-count">0</span>
       </button>
       <div class="cart-dropdown" id="cartDropdown">
         <h3>Your Order</h3>
         <div class="cart-items" id="cartItems">
-          <!-- Cart items will appear here -->
           <p class="empty-cart">Your cart is empty</p>
         </div>
         <div class="cart-total">
           <span>Total:</span>
           <span id="cartTotal">₹0</span>
         </div>
+        <button class="clear-cart-btn" id="clearCartBtn">Clear Cart</button>
         <button class="checkout-btn" id="checkoutBtn">Checkout</button>
       </div>
     </div>
+
+    <button class="back-to-top" id="backToTopBtn" aria-label="Back to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
   </main>
 
   <footer>
@@ -77,31 +96,33 @@
       <div class="footer-section">
         <h3>Follow Us</h3>
         <div class="social-icons">
-          <a href="#"><i class="fab fa-facebook"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
         </div>
       </div>
     </div>
     <div class="copyright">
-      <p>&copy; 2025 Delicious Bites. All rights reserved.</p>
+      <p>© 2025 Delicious Bites. All rights reserved.</p>
     </div>
   </footer>
 
   <div class="modal" id="itemModal">
     <div class="modal-content">
-      <span class="close-modal">&times;</span>
+      <span class="close-modal" aria-label="Close modal">×</span>
       <img id="modalImage" src="" alt="" />
       <div class="modal-info">
         <h2 id="modalTitle"></h2>
         <p class="modal-category" id="modalCategory"></p>
+        <div class="modal-rating" id="modalRating"></div>
+        <p class="modal-description" id="modalDescription"></p>
         <p class="modal-price" id="modalPrice"></p>
         <div class="quantity-control">
-          <button class="quantity-btn" id="decreaseQty">-</button>
+          <button class="quantity-btn" id="decreaseQty" aria-label="Decrease quantity">-</button>
           <span id="itemQty">1</span>
-          <button class="quantity-btn" id="increaseQty">+</button>
+          <button class="quantity-btn" id="increaseQty" aria-label="Increase quantity">+</button>
         </div>
-        <button class="add-to-cart-btn" id="addToCartBtn">Add to Cart</button>
+        <button class="add-to-cart-btn" id="addToCartBtn" aria-label="Add to cart">Add to Cart</button>
       </div>
     </div>
   </div>
