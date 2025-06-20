@@ -1,4 +1,4 @@
-const apiKey = '8367f74f339dc2f16e4ecf5aee91a893';
+const apiKey = 'Your api key ';
 const apiUrl = 'https://api.exchangeratesapi.io/v1/latest?access_key=' + apiKey;
 
 async function fetchCurrencies() {
@@ -13,7 +13,7 @@ async function fetchCurrencies() {
     currencies.forEach((currency) => {
       const option1 = document.createElement('option');
       const option2 = document.createElement('option');
-      option1.value = option2.value = currency;
+      option1.value = option2.value = currency;through exhangerates
       option1.textContent = option2.textContent = currency;
       fromCurrency.appendChild(option1);
       toCurrency.appendChild(option2);
